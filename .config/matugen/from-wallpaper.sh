@@ -19,3 +19,8 @@ case ${src,,} in
 esac
 
 matugen image "$src" -m dark --prefer saturation
+
+# Cabecera del tema de rofi (themes/aurora.rasi): franja central del fondo
+mkdir -p ~/.cache/rofi
+ffmpeg -loglevel error -y -i "$src" -frames:v 1 \
+    -vf "scale=1240:-2,crop=1240:400" ~/.cache/rofi/banner.png

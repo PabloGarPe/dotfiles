@@ -55,3 +55,11 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
+-- Desenfoque tras rofi (tema ~/.config/rofi/themes/aurora.rasi)
+hl.layer_rule({
+    name         = "rofi-blur",
+    match        = { namespace = "^rofi$" },
+    blur         = true,
+    ignore_alpha = 0.1,
+})

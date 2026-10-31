@@ -1,9 +1,29 @@
 /* Generado por matugen a partir del wallpaper. No editar a mano. */
 * {
-    background:     #0f1417FF;
-    background-alt: #262b2eFF;
-    foreground:     #dfe3e7FF;
-    selected:       #8fcef3FF;
-    active:         #cac1eaFF;
+    /* Nombres que usan los temas de adi1090x (launchers/, powermenu/, applets/) */
+    background:     #121318FF;
+    background-alt: #292a2fFF;
+    foreground:     #e3e1e9FF;
+    selected:       #b8c4ffFF;
+    active:         #e4bad9FF;
     urgent:         #ffb4abFF;
+
+    /* Paleta Material completa, para themes/aurora.rasi */
+    m-surface:              #121318;
+    m-surface-glass:        #121318D9;
+    m-surface-container:    #1f1f25;
+    m-surface-high:         #292a2f;
+    m-surface-highest:      #34343a;
+    m-on-surface:           #e3e1e9;
+    m-on-surface-variant:   #c6c5d0;
+    m-outline:              #90909a;
+    m-outline-variant:      #45464f;
+    m-primary:              #b8c4ff;
+    m-on-primary:           #202c61;
+    m-primary-container:    #374379;
+    m-on-primary-container: #dde1ff;
+    m-secondary-container:  #424659;
+    m-on-secondary-container: #dfe1f9;
+    m-tertiary:             #e4bad9;
+    m-error:                #ffb4ab;
 }

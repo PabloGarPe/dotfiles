@@ -1,0 +1,194 @@
+/**
+ * Aurora: lanzador de rofi con los colores de matugen.
+ *
+ * - Colores: colors/matugen.rasi (se regenera al cambiar de wallpaper)
+ * - Cabecera: ~/.cache/rofi/banner.png (la recorta matugen/from-wallpaper.sh)
+ * - Blur del fondo: layer_rule "rofi-blur" en ~/.config/hypr/conf/rules.lua
+ **/
+
+configuration {
+    modi:                "drun,run,window,filebrowser";
+    show-icons:          true;
+    icon-theme:          "Papirus";
+    display-drun:        "󰀻  Apps";
+    display-run:         "  Run";
+    display-window:      "  Ventanas";
+    display-filebrowser: "  Archivos";
+    drun-display-format: "{name}[ <span size='small' alpha='55%'>· {generic}</span>]";
+    window-format:       "{c}  <span size='small' alpha='55%'>{t}</span>";
+    window-match-fields: "title,class";
+    hover-select:        true;
+    me-select-entry:     "";
+    me-accept-entry:     "MousePrimary";
+}
+
+@import "../colors/matugen.rasi"
+
+* {
+    font:             "Inter Medium 11";
+    icon-font:        "JetBrainsMono Nerd Font 14";
+    background-color: transparent;
+    text-color:       @m-on-surface;
+}
+
+/*****----- Ventana -----*****/
+window {
+    transparency:     "real";
+    location:         center;
+    anchor:           center;
+    width:            640px;
+    border:           1px solid;
+    border-color:     @m-outline-variant;
+    border-radius:    26px;
+    background-color: @m-surface-glass;
+}
+
+mainbox {
+    spacing:  0px;
+    padding:  0px;
+    children: [ "header", "body" ];
+}
+
+/*****----- Cabecera con el wallpaper -----*****/
+header {
+    orientation:      vertical;
+    expand:           false;
+    margin:           10px 10px 0px 10px;
+    padding:          136px 16px 16px 16px;
+    border-radius:    18px;
+    background-image: url("~/.cache/rofi/banner.png", width);
+    children:         [ "inputbar" ];
+}
+
+inputbar {
+    spacing:          12px;
+    padding:          12px 18px;
+    border-radius:    14px;
+    background-color: @m-surface-glass;
+    children:         [ "textbox-search", "entry", "num-filtered-rows" ];
+}
+
+textbox-search {
+    expand:           false;
+    str:              "";
+    font:             @icon-font;
+    text-color:       @m-primary;
+    vertical-align:   0.5;
+}
+
+entry {
+    placeholder:       "Buscar…";
+    placeholder-color: @m-on-surface-variant;
+    cursor:            text;
+    cursor-color:      @m-primary;
+    vertical-align:    0.5;
+}
+
+num-filtered-rows {
+    expand:         false;
+    text-color:     @m-on-surface-variant;
+    font:           "Inter 10";
+    vertical-align: 0.5;
+}
+
+/*****----- Cuerpo -----*****/
+body {
+    orientation: vertical;
+    expand:      true;
+    spacing:     12px;
+    padding:     14px 14px 14px 14px;
+    children:    [ "mode-switcher", "message", "listview" ];
+}
+
+mode-switcher {
+    spacing: 6px;
+}
+
+button {
+    padding:          8px 0px;
+    border-radius:    12px;
+    background-color: @m-surface-container;
+    text-color:       @m-on-surface-variant;
+    font:             "Inter SemiBold 10";
+    cursor:           pointer;
+}
+
+button selected {
+    background-color: @m-secondary-container;
+    text-color:       @m-on-secondary-container;
+}
+
+message {
+    padding:          10px 14px;
+    border-radius:    12px;
+    background-color: @m-surface-high;
+}
+
+textbox {
+    text-color: @m-on-surface;
+}
+
+/*****----- Lista -----*****/
+listview {
+    columns:      1;
+    lines:        6;
+    spacing:      4px;
+    cycle:        true;
+    dynamic:      true;
+    scrollbar:    false;
+    fixed-height: true;
+    fixed-columns: true;
+}
+
+element {
+    spacing:       14px;
+    padding:       9px 14px;
+    border-radius: 14px;
+    cursor:        pointer;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color:       @m-on-surface;
+}
+
+element normal.active,
+element alternate.active {
+    text-color: @m-tertiary;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    text-color: @m-error;
+}
+
+element selected.normal,
+element selected.active {
+    background-color: @m-primary-container;
+    text-color:       @m-on-primary-container;
+}
+
+element selected.urgent {
+    background-color: @m-error;
+    text-color:       @m-surface;
+}
+
+element-icon {
+    size:       30px;
+    cursor:     inherit;
+    text-color: inherit;
+}
+
+element-text {
+    vertical-align: 0.5;
+    cursor:         inherit;
+    text-color:     inherit;
+    highlight:      bold;
+}
+
+error-message {
+    padding:          20px;
+    border-radius:    18px;
+    background-color: @m-surface;
+}
