@@ -1,0 +1,16 @@
+[SddmGreeterTheme]
+Name=Crimson Moon
+Description=Video background, glass login card, crimson accents
+Author=dog
+Copyright=(c) 2026
+License=MIT
+Type=sddm-theme
+Version=1.0
+Website=
+Screenshot=assets/background.jpg
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Theme-Id=crimson-moon
+Theme-API=2.0
+QtVersion=6
