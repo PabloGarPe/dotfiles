@@ -99,6 +99,11 @@ fi
 [[ -f /usr/share/cachyos-zsh-config/cachyos-config.zsh ]] \
     || warn ".zshrc usa cachyos-zsh-config (oh-my-zsh + p10k); fuera de CachyOS tendrás que adaptarlo"
 
+# waypaper: config local a partir de la plantilla del repo (guarda el fondo de cada equipo)
+wp=$HOME/.config/waypaper
+[[ -f $wp/config.ini ]] || cp "$wp/config.example.ini" "$wp/config.ini"
+mkdir -p "$HOME/Pictures/Wallpapers"
+
 # 4. Iconos: Papirus-Dark con carpetas del color del wallpaper (se regenera con waypaper)
 if [[ -d /usr/share/icons/Papirus ]]; then
     say "Generando el tema de iconos Papirus-Matugen"

@@ -6,7 +6,7 @@ Hyprland (config en Lua) en CachyOS, con estética macOS Sequoia en oscuro.
 |---|---|
 | Hyprland: atajos, reglas, autostart, dock, Alt+Tab | `.config/hypr/` |
 | Barra de menú y dock auto-ocultable (waybar) | `.config/waybar/` |
-| Fondos (waypaper + mpvpaper, imágenes y vídeo) | `.config/waypaper/` |
+| Fondos (waypaper + mpvpaper, imágenes y vídeo) | `.config/waypaper/config.example.ini` |
 | Colores del sistema a partir del fondo (matugen) | `.config/matugen/` |
 | Lanzador (tema Aurora) y menú de apagado (rofi) | `.config/rofi/` |
 | Centro de control (reloj de waybar) y selector de fondos en cinta (Super+Shift+W), con Quickshell | `.config/quickshell/` |
@@ -50,6 +50,10 @@ alias dots='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 dots config status.showUntrackedFiles no
 dots checkout   # si choca con ficheros existentes, muévelos antes
 ```
+
+Sin el instalador, crea la config de waypaper a partir de la plantilla: `cp ~/.config/waypaper/config.example.ini ~/.config/waypaper/config.ini`.
+
+`.config/hypr/hyprland-gui.lua` (ajustes de HyprMod, como los monitores) y `.config/waypaper/config.ini` (fondo elegido) son propios de cada equipo y no están en el repo.
 
 El tema de Brave se carga a mano: `brave://extensions` → modo desarrollador → *Cargar descomprimida* → `~/.local/share/brave-themes/nocturne`.
 

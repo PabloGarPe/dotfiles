@@ -17,5 +17,6 @@ require("conf.dock")        -- Dock de waybar que aparece con el ratón
 require("conf.workspaces")  -- Workspaces por monitor
 require("conf.rules")       -- Reglas de ventanas
 
--- HyprMod managed settings (se carga al final para que sus valores prevalezcan)
-require("hyprland-gui")
+-- Ajustes locales de HyprMod (monitores, etc.): se carga al final para que prevalezcan.
+-- No está en el repo (es propio de cada equipo), así que puede no existir.
+pcall(require, "hyprland-gui")
