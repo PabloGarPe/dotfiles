@@ -1,0 +1,16 @@
+# Ejecuta .github/check.sh (lo mismo que 'dots check') en cada push y pull request
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Dependencias
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq shellcheck lua5.4
+      - name: Comprobaciones
+        run: bash .github/check.sh

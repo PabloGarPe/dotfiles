@@ -23,7 +23,7 @@ PACKAGES=(
     git zsh fzf fastfetch
     hyprland xdg-desktop-portal-hyprland hyprsunset waybar quickshell rofi kitty dolphin dunst
     waypaper mpvpaper matugen socat jq ffmpeg imagemagick python-pillow python-numpy
-    grim slurp wl-clipboard libnotify brightnessctl playerctl wireplumber
+    grim slurp wl-clipboard libnotify brightnessctl playerctl wireplumber shellcheck lua
     inter-font ttf-jetbrains-mono-nerd papirus-icon-theme
     neovim go gcc clang rust
 )
@@ -93,6 +93,8 @@ fi
 
 # Lo que nunca debe entrar en el repo (ficheros locales y generados)
 cp "$HOME/.github/exclude" "$GIT_DIR/info/exclude"
+# 'dots check': comprobaciones antes de hacer push (.github/check.sh)
+dots config alias.check '!bash "$HOME/.github/check.sh"'
 
 # 3. Shell ---------------------------------------------------------------------
 if [[ $(getent passwd "$USER" | cut -d: -f7) != */zsh ]]; then
