@@ -56,6 +56,11 @@ local screenshot = "~/.config/hypr/scripts/screenshot.sh"
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(screenshot))
 hl.bind("Print", hl.dsp.exec_cmd(screenshot))
 
+-- Notas rápidas (~/Notes/quick.md): SUPER+SPACE escribir, SUPER+SHIFT+SPACE ver
+local notes = "~/.config/hypr/scripts/notes.sh"
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(notes .. " add"))
+hl.bind(mainMod .. " + SHIFT + SPACE", hl.dsp.exec_cmd(notes .. " view"))
+
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))

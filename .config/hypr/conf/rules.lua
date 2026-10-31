@@ -73,3 +73,12 @@ hl.layer_rule({
     ignore_alpha = 0.3,
     no_anim      = true,
 })
+
+-- Editor de notas rápidas (Alt+e desde SUPER+SHIFT+SPACE): flotante y centrado
+hl.window_rule({
+    name   = "quick-notes",
+    match  = { class = "^quick-notes$" },
+    float  = true,
+    size   = "900 600",
+    center = true,
+})
