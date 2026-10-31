@@ -20,7 +20,7 @@ GIT_DIR=$HOME/.dotfiles
 BACKUP=$HOME/.dotfiles-backup/$(date +%F_%H%M%S)
 
 PACKAGES=(
-    git zsh fzf
+    git zsh fzf fastfetch
     hyprland xdg-desktop-portal-hyprland hyprsunset waybar quickshell rofi kitty dolphin dunst
     waypaper mpvpaper matugen socat jq ffmpeg imagemagick python-pillow python-numpy
     grim slurp wl-clipboard

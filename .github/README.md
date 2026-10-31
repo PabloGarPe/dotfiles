@@ -13,13 +13,13 @@ Hyprland (config en Lua) en CachyOS, con estética macOS Sequoia en oscuro.
 | Neovim (LazyVim) | `.config/nvim/` |
 | Tema "Nocturne" para Brave | `.local/share/brave-themes/nocturne/` |
 | Tema "Nocturne" para LibreWolf | `.config/librewolf/librewolf/*/chrome/`, `user.js` |
-| Shell (zsh + Powerlevel10k) | `.zshrc`, `.p10k.zsh` |
+| Shell (zsh + Powerlevel10k) y fastfetch con avatar al abrir kitty | `.zshrc`, `.p10k.zsh`, `.config/fastfetch/`, `.config/kitty/` |
 | Activar Secure Boot con claves propias (sbctl + GRUB) | `secureboot.sh` |
 
 ## Dependencias
 
 ```sh
-sudo pacman -S hyprland waybar quickshell rofi kitty dolphin waypaper mpvpaper socat matugen \
+sudo pacman -S hyprland waybar quickshell rofi kitty fastfetch dolphin waypaper mpvpaper socat matugen \
   ffmpeg jq grim slurp wl-clipboard dunst hyprsunset xdg-desktop-portal-hyprland \
   inter-font ttf-jetbrains-mono-nerd papirus-icon-theme imagemagick python-pillow python-numpy neovim
 ```
