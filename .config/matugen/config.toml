@@ -1,0 +1,35 @@
+# matugen: genera los colores del sistema a partir del wallpaper.
+# Lo lanza ~/.config/matugen/from-wallpaper.sh (post_command de waypaper); plantillas en templates/.
+
+[config]
+
+[templates.hyprland]
+input_path  = '~/.config/matugen/templates/hyprland.lua'
+output_path = '~/.config/hypr/conf/colors.lua'
+post_hook   = 'hyprctl reload >/dev/null'
+
+[templates.waybar]
+input_path  = '~/.config/matugen/templates/waybar.css'
+output_path = '~/.config/waybar/colors.css'
+# Sin post_hook: el tema macOS de waybar no usa colors.css, y recargar waybar con SIGUSR2 lo cuelga (0.15)
+
+[templates.rofi]
+input_path  = '~/.config/matugen/templates/rofi.rasi'
+output_path = '~/.config/rofi/colors/matugen.rasi'
+
+[templates.gtk3]
+input_path  = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path  = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
+[templates.kde]
+input_path  = '~/.config/matugen/templates/kdeglobals'
+output_path = '~/.config/kdeglobals'
+
+# Mismo esquema como archivo .colors, para qt6ct-kde (todas las apps Qt)
+[templates.kde-colors]
+input_path  = '~/.config/matugen/templates/kdeglobals'
+output_path = '~/.local/share/color-schemes/Matugen.colors'

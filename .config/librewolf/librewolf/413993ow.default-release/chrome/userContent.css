@@ -1,0 +1,55 @@
+/* NOCTURNE — páginas internas */
+
+@-moz-document url("about:home"), url("about:newtab"), url("about:privatebrowsing") {
+  :root, body {
+    --newtab-background-color: #0d0d14 !important;
+    --newtab-background-color-secondary: #1c1c2b !important;
+    --newtab-text-primary-color: #e7e7f2 !important;
+    --newtab-primary-action-background: #8b5cff !important;
+    --in-content-page-background: #0d0d14 !important;
+  }
+  body {
+    background:
+      radial-gradient(800px 500px at 20% 10%, rgba(139,92,255,.20), transparent 60%),
+      radial-gradient(700px 500px at 85% 90%, rgba(255,92,168,.14), transparent 60%),
+      radial-gradient(500px 400px at 60% 40%, rgba(76,215,240,.06), transparent 60%),
+      #0d0d14 !important;
+    background-attachment: fixed !important;
+  }
+  .search-handoff-button, .search-wrapper input {
+    background-color: #14141f !important;
+    border: 1px solid #2a2a40 !important;
+    border-radius: 14px !important;
+    color: #e7e7f2 !important;
+  }
+  .search-wrapper input:focus, .search-handoff-button:focus {
+    border-color: #8b5cff !important;
+    box-shadow: 0 0 0 4px rgba(139,92,255,.2) !important;
+  }
+  .top-site-outer .tile {
+    background-color: #1c1c2b !important;
+    border-radius: 16px !important;
+    box-shadow: 0 6px 20px -10px rgba(0,0,0,.8) !important;
+    transition: transform .2s ease, box-shadow .2s ease !important;
+  }
+  .top-site-outer:hover .tile {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px -10px rgba(139,92,255,.6) !important;
+  }
+  .top-site-outer .title { color: #8a8aa8 !important; }
+}
+
+@-moz-document url("about:blank") {
+  html, body { background-color: #0d0d14 !important; }
+}
+
+@-moz-document url-prefix("about:") {
+  :root {
+    --in-content-page-background: #0d0d14 !important;
+    --in-content-box-background: #14141f !important;
+    --in-content-accent-color: #8b5cff !important;
+    --in-content-primary-button-background: #8b5cff !important;
+    --in-content-primary-button-background-hover: #9d74ff !important;
+    --color-accent-primary: #8b5cff !important;
+  }
+}

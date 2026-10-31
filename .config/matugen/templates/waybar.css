@@ -1,0 +1,7 @@
+/* Generado por matugen a partir del wallpaper. No editar a mano. */
+@define-color bg      {{colors.surface.default.hex}};
+@define-color bg-alt  {{colors.surface_container_high.default.hex}};
+@define-color surface {{colors.outline_variant.default.hex}};
+@define-color fg      {{colors.on_surface.default.hex}};
+@define-color accent  {{colors.primary.default.hex}};
+@define-color on-accent {{colors.on_primary.default.hex}};

@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Nocturne",
+  "version": "1.0",
+  "description": "Tema oscuro con acento degradado violeta/rosa (a juego con LibreWolf)",
+  "theme": {
+    "images": {
+      "theme_frame": "images/frame.png",
+      "theme_frame_inactive": "images/frame_inactive.png",
+      "theme_ntp_background": "images/ntp.png"
+    },
+    "colors": {
+      "frame":                 [13, 13, 20],
+      "frame_inactive":        [11, 11, 17],
+      "frame_incognito":       [16, 10, 26],
+      "frame_incognito_inactive": [13, 9, 21],
+      "background_tab":        [13, 13, 20],
+      "background_tab_inactive": [11, 11, 17],
+      "toolbar":               [28, 28, 43],
+      "toolbar_text":          [231, 231, 242],
+      "toolbar_button_icon":   [231, 231, 242],
+      "tab_text":              [255, 255, 255],
+      "tab_background_text":   [138, 138, 168],
+      "tab_background_text_inactive": [110, 110, 135],
+      "bookmark_text":         [231, 231, 242],
+      "button_background":     [0, 0, 0, 0],
+      "omnibox_background":    [20, 20, 31],
+      "omnibox_text":          [231, 231, 242],
+      "ntp_background":        [13, 13, 20],
+      "ntp_text":              [231, 231, 242],
+      "ntp_link":              [139, 92, 255],
+      "ntp_header":            [139, 92, 255],
+      "ntp_section":           [28, 28, 43],
+      "control_button_background": [0, 0, 0, 0]
+    },
+    "tints": {
+      "buttons": [-1, -1, 0.95]
+    },
+    "properties": {
+      "ntp_background_alignment": "center",
+      "ntp_background_repeat": "no-repeat",
+      "color_scheme": "dark"
+    }
+  }
+}

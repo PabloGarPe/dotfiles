@@ -1,0 +1,204 @@
+/* ═══════════════════════════════════════════════════════════
+   NOCTURNE — tema oscuro con acento degradado violeta/rosa
+   LibreWolf / Firefox 13x+
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  --nc-bg:        #0d0d14;
+  --nc-surface:   #14141f;
+  --nc-surface-2: #1c1c2b;
+  --nc-surface-3: #26263a;
+  --nc-border:    #2a2a40;
+  --nc-text:      #e7e7f2;
+  --nc-muted:     #8a8aa8;
+  --nc-violet:    #8b5cff;
+  --nc-pink:      #ff5ca8;
+  --nc-cyan:      #4cd7f0;
+  --nc-grad:      linear-gradient(90deg, var(--nc-violet), var(--nc-pink));
+  --nc-radius:    10px;
+
+  /* Variables nativas de Firefox */
+  --toolbar-bgcolor: var(--nc-bg) !important;
+  --toolbar-color: var(--nc-text) !important;
+  --toolbox-bgcolor: var(--nc-bg) !important;
+  --toolbox-bgcolor-inactive: var(--nc-bg) !important;
+  --toolbox-textcolor: var(--nc-text) !important;
+  --lwt-accent-color: var(--nc-bg) !important;
+  --lwt-text-color: var(--nc-text) !important;
+  --tab-selected-bgcolor: var(--nc-surface-2) !important;
+  --tab-selected-textcolor: #fff !important;
+  --tab-border-radius: var(--nc-radius) !important;
+  --tab-min-height: 30px !important;
+  --toolbarbutton-border-radius: 8px !important;
+  --toolbarbutton-hover-background: var(--nc-surface-3) !important;
+  --toolbarbutton-active-background: color-mix(in srgb, var(--nc-violet) 35%, transparent) !important;
+  --toolbar-field-background-color: var(--nc-surface) !important;
+  --toolbar-field-focus-background-color: var(--nc-surface-2) !important;
+  --toolbar-field-color: var(--nc-text) !important;
+  --toolbar-field-focus-color: #fff !important;
+  --toolbar-field-border-color: var(--nc-border) !important;
+  --toolbar-field-focus-border-color: var(--nc-violet) !important;
+  --urlbar-box-bgcolor: var(--nc-surface-2) !important;
+  --urlbar-box-hover-bgcolor: var(--nc-surface-3) !important;
+  --focus-outline-color: var(--nc-violet) !important;
+  --arrowpanel-background: var(--nc-surface) !important;
+  --arrowpanel-color: var(--nc-text) !important;
+  --arrowpanel-border-color: var(--nc-border) !important;
+  --arrowpanel-border-radius: 14px !important;
+  --panel-separator-color: var(--nc-border) !important;
+  --button-hover-bgcolor: var(--nc-surface-3) !important;
+  --sidebar-background-color: var(--nc-bg) !important;
+  --sidebar-text-color: var(--nc-text) !important;
+  --sidebar-border-color: var(--nc-border) !important;
+  --chrome-content-separator-color: transparent !important;
+  accent-color: var(--nc-violet) !important;
+}
+
+/* ── Fondo general ─────────────────────────────────────────── */
+#navigator-toolbox {
+  background:
+    radial-gradient(900px 120px at 15% -40px, color-mix(in srgb, var(--nc-violet) 22%, transparent), transparent 70%),
+    radial-gradient(700px 120px at 85% -40px, color-mix(in srgb, var(--nc-pink) 14%, transparent), transparent 70%),
+    var(--nc-bg) !important;
+  border-bottom: none !important;
+}
+#nav-bar, #PersonalToolbar, #TabsToolbar, #titlebar {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Línea degradada bajo la barra */
+#navigator-toolbox::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--nc-violet) 30%, var(--nc-pink) 70%, transparent);
+  opacity: .55;
+}
+
+/* ── Pestañas ──────────────────────────────────────────────── */
+.tabbrowser-tab { padding-inline: 2px !important; }
+.tabbrowser-tab .tab-background {
+  border-radius: var(--nc-radius) !important;
+  margin-block: 4px !important;
+  transition: background-color .18s ease, box-shadow .18s ease !important;
+}
+.tabbrowser-tab:hover:not([selected]) .tab-background {
+  background-color: var(--nc-surface) !important;
+}
+.tabbrowser-tab[selected] .tab-background,
+.tabbrowser-tab[multiselected] .tab-background {
+  background:
+    linear-gradient(var(--nc-surface-2), var(--nc-surface-2)) padding-box,
+    var(--nc-grad) border-box !important;
+  border: 1px solid transparent !important;
+  box-shadow: 0 4px 18px -6px color-mix(in srgb, var(--nc-violet) 70%, transparent) !important;
+  outline: none !important;
+}
+.tabbrowser-tab:not([selected]) .tab-label { color: var(--nc-muted) !important; }
+.tabbrowser-tab:hover .tab-label { color: var(--nc-text) !important; }
+.tab-label { font-weight: 500 !important; }
+
+/* Indicador de sonido / carga en color acento */
+.tab-throbber[busy]::before { fill: var(--nc-pink) !important; }
+.tabbrowser-tab[soundplaying] .tab-icon-overlay { fill: var(--nc-cyan) !important; }
+
+/* Botón cerrar solo al hover (excepto pestaña activa) */
+.tabbrowser-tab:not([selected]):not(:hover) .tab-close-button { opacity: 0 !important; }
+.tab-close-button { border-radius: 6px !important; }
+.tab-close-button:hover { background-color: color-mix(in srgb, var(--nc-pink) 30%, transparent) !important; }
+
+/* Separadores fuera */
+.tabbrowser-tab::after, .tabbrowser-tab::before { border: none !important; }
+
+/* Pestañas verticales / sidebar nueva */
+#sidebar-main, #sidebar-box, sidebar-main {
+  background-color: var(--nc-bg) !important;
+}
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[selected] .tab-background {
+  box-shadow: inset 3px 0 0 var(--nc-pink), 0 4px 18px -8px var(--nc-violet) !important;
+}
+
+/* ── Barra de direcciones ─────────────────────────────────── */
+#urlbar-background {
+  border-radius: 12px !important;
+  border: 1px solid var(--nc-border) !important;
+  box-shadow: none !important;
+  transition: border-color .2s ease, box-shadow .2s ease !important;
+}
+#urlbar:hover:not([focused]) #urlbar-background { border-color: var(--nc-surface-3) !important; }
+#urlbar[focused] #urlbar-background,
+#urlbar[open] #urlbar-background {
+  border-color: transparent !important;
+  background:
+    linear-gradient(var(--nc-surface-2), var(--nc-surface-2)) padding-box,
+    var(--nc-grad) border-box !important;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--nc-violet) 18%, transparent),
+              0 10px 30px -10px rgba(0,0,0,.8) !important;
+  outline: none !important;
+}
+#urlbar-input { text-align: center !important; }
+#urlbar[focused] #urlbar-input { text-align: start !important; }
+#urlbar-input::selection { background: var(--nc-violet) !important; color: #fff !important; }
+
+/* Resultados del urlbar */
+.urlbarView-row[selected] > .urlbarView-row-inner,
+.urlbarView-row:hover > .urlbarView-row-inner {
+  background: color-mix(in srgb, var(--nc-violet) 22%, transparent) !important;
+  border-radius: 8px !important;
+}
+.urlbarView-url { color: var(--nc-cyan) !important; }
+.urlbarView-action { color: var(--nc-pink) !important; }
+
+/* Identidad / candado */
+#identity-box > box, #tracking-protection-icon-container {
+  border-radius: 8px !important;
+}
+
+/* ── Botones de toolbar ───────────────────────────────────── */
+toolbarbutton .toolbarbutton-icon,
+toolbarbutton .toolbarbutton-badge-stack {
+  transition: background-color .15s ease, transform .15s ease !important;
+}
+toolbarbutton:active .toolbarbutton-icon,
+toolbarbutton:active .toolbarbutton-badge-stack { transform: scale(.92); }
+.toolbarbutton-badge {
+  background: var(--nc-grad) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+/* Barra de marcadores */
+#PersonalToolbar .bookmark-item { border-radius: 7px !important; padding-inline: 6px !important; }
+#PersonalToolbar .bookmark-item:hover { background-color: var(--nc-surface-2) !important; }
+
+/* ── Menús y paneles ──────────────────────────────────────── */
+menupopup, panel {
+  --panel-background: var(--nc-surface) !important;
+  --panel-color: var(--nc-text) !important;
+  --panel-border-color: var(--nc-border) !important;
+  --panel-border-radius: 12px !important;
+}
+menupopup menuitem, menupopup menu {
+  border-radius: 6px !important;
+  margin-inline: 4px !important;
+}
+menupopup menuitem[_moz-menuactive], menupopup menu[_moz-menuactive] {
+  background-color: color-mix(in srgb, var(--nc-violet) 28%, transparent) !important;
+  color: #fff !important;
+}
+.subviewbutton:hover, .subviewbutton:focus-visible {
+  background-color: var(--nc-surface-3) !important;
+}
+.panel-subview-body .subviewbutton { border-radius: 8px !important; }
+
+/* Descargas con barra degradada */
+.downloadProgress::-moz-progress-bar { background: var(--nc-grad) !important; }
+
+/* ── Contenido ────────────────────────────────────────────── */
+#tabbrowser-tabbox, #browser { background-color: var(--nc-bg) !important; }
+.browserStack > browser { background-color: var(--nc-bg) !important; }
+
+/* Scrollbars finas en la interfaz */
+* { scrollbar-width: thin; scrollbar-color: var(--nc-surface-3) transparent; }

@@ -1,0 +1,31 @@
+// Dock estilo macOS. Un proceso de waybar por monitor (scripts/dock.sh) que arranca oculto;
+// ~/.config/hypr/conf/dock.lua lo muestra al llevar el ratón al borde inferior.
+{
+    "name": "dock",
+    "layer": "top",
+    "position": "bottom",
+    "height": 58,
+    "width": 2,
+    "exclusive": false, // Sin reservar espacio: las ventanas pasan por debajo, como en macOS
+    "margin-bottom": 6,
+    "spacing": 0,
+    "start_hidden": true,
+
+    "modules-left": ["custom/dock-launcher"],
+    "modules-center": ["wlr/taskbar"],
+
+    "custom/dock-launcher": {
+        "format": "󰀻",
+        "tooltip-format": "Aplicaciones",
+        "on-click": "rofi -show drun"
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 38,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": []
+    }
+}

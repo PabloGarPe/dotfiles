@@ -1,0 +1,11 @@
+/* Generado por matugen a partir del wallpaper. No editar a mano.
+ * Tema oscuro (Adwaita-dark) con el color de acento del wallpaper. */
+
+/* GTK4 / libadwaita */
+@define-color accent_color          {{colors.primary.default.hex}};
+@define-color accent_bg_color       {{colors.primary.default.hex}};
+@define-color accent_fg_color       {{colors.on_primary.default.hex}};
+
+/* GTK3 / Adwaita-dark */
+@define-color theme_selected_bg_color {{colors.primary.default.hex}};
+@define-color theme_selected_fg_color {{colors.on_primary.default.hex}};

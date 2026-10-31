@@ -1,0 +1,9 @@
+/* Generado por matugen a partir del wallpaper. No editar a mano. */
+* {
+    background:     #0f1417FF;
+    background-alt: #262b2eFF;
+    foreground:     #dfe3e7FF;
+    selected:       #8fcef3FF;
+    active:         #cac1eaFF;
+    urgent:         #ffb4abFF;
+}

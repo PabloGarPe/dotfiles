@@ -1,0 +1,11 @@
+-------------------
+---- AUTOSTART ----
+-------------------
+
+-- See https://wiki.hypr.land/configuring/core/autostart/
+-- waybar lo arranca HyprMod (hyprland-gui.lua).
+
+hl.on("hyprland.start", function()
+    hl.exec_cmd("hyprsunset & disown") -- Brillo por software (centro de control de rofi)
+    hl.exec_cmd("waypaper --restore") -- Último fondo (mpvpaper: imágenes y vídeos) + colores (matugen)
+end)

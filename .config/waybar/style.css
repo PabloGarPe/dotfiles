@@ -1,0 +1,174 @@
+/* Estilo macOS Sequoia (basado en kamlendras/waybar-macos-sequoia), versión oscura translúcida.
+   El fondo se desenfoca con la layer rule "waybar-blur" de ~/.config/hypr/conf/rules.lua */
+
+@define-color bar       rgba(28, 28, 30, 0.55);   /* #1C1C1E */
+@define-color dock      rgba(44, 44, 46, 0.45);   /* #2C2C2E */
+@define-color hover     rgba(255, 255, 255, 0.14);
+@define-color pressed   rgba(255, 255, 255, 0.22);
+@define-color border    rgba(255, 255, 255, 0.12);
+@define-color text      #FFFFFF;
+@define-color text-2    #86868B;
+@define-color accent    #0A84FF;
+@define-color red       #FF453A;
+@define-color orange    #FF9F0A;
+
+* {
+    font-family: "Inter", "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+window#waybar {
+    color: @text;
+}
+
+tooltip {
+    background: rgba(30, 30, 32, 0.92);
+    border: 1px solid @border;
+    border-radius: 10px;
+}
+tooltip label { color: @text; padding: 2px 4px; }
+
+/* ═════════════════ Barra de menú ═════════════════ */
+
+window#waybar.menubar {
+    background: @bar;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Todos los elementos son "botones" de menú: píldora que se ilumina al pasar el ratón */
+.menubar #custom-launcher,
+.menubar #window,
+.menubar #temperature,
+.menubar #cpu,
+.menubar #memory,
+.menubar #network,
+.menubar #pulseaudio,
+.menubar #tray,
+.menubar #custom-power,
+.menubar #clock {
+    padding: 0 9px;
+    margin: 3px 1px;
+    border-radius: 6px;
+    transition: background-color 0.15s ease;
+}
+
+.menubar #custom-launcher:hover,
+.menubar #temperature:hover,
+.menubar #cpu:hover,
+.menubar #memory:hover,
+.menubar #network:hover,
+.menubar #pulseaudio:hover,
+.menubar #custom-power:hover,
+.menubar #clock:hover {
+    background: @hover;
+}
+
+.menubar #custom-launcher {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 16px;
+    padding: 0 12px 0 14px;
+}
+
+/* App activa en negrita, como el menú de la app en macOS */
+.menubar #window {
+    font-weight: bold;
+    padding-right: 6px;
+}
+window#waybar.menubar.empty #window { color: @text; }
+
+/* Iconos de estado */
+.menubar #temperature,
+.menubar #cpu,
+.menubar #memory,
+.menubar #network,
+.menubar #pulseaudio,
+.menubar #custom-power {
+    font-family: "JetBrainsMono Nerd Font", "Inter";
+    font-size: 13px;
+}
+.menubar #network,
+.menubar #pulseaudio,
+.menubar #custom-power {
+    font-size: 15px;
+}
+
+.menubar #cpu.warning,
+.menubar #memory.warning      { color: @orange; }
+.menubar #cpu.critical,
+.menubar #memory.critical,
+.menubar #temperature.critical,
+.menubar #network.disconnected { color: @red; }
+.menubar #pulseaudio.muted    { color: @text-2; }
+
+.menubar #clock {
+    font-weight: 500;
+    padding: 0 14px 0 10px;
+}
+
+/* Workspaces como entradas de menú: vacíos en gris, el activo resaltado como menú abierto */
+.menubar #workspaces button {
+    color: @text-2;
+    padding: 0 9px;
+    margin: 3px 1px;
+    border-radius: 6px;
+    background: transparent;
+    transition: background-color 0.15s ease;
+}
+.menubar #workspaces button:not(.empty) { color: @text; }
+.menubar #workspaces button.active {
+    color: @text;
+    font-weight: 600;
+    background: @pressed;
+}
+.menubar #workspaces button.urgent { color: @red; }
+.menubar #workspaces button:hover { background: @hover; }
+
+#tray > .passive         { -gtk-icon-effect: dim; }
+#tray > .needs-attention { -gtk-icon-effect: highlight; }
+
+/* ═════════════════ Dock ═════════════════ */
+
+window#waybar.dock {
+    background: transparent;
+}
+
+/* El "cristal" del dock envuelve lanzador + apps */
+.dock > box {
+    background: @dock;
+    border: 1px solid @border;
+    border-radius: 18px;
+    padding: 0 6px;
+}
+
+.dock #custom-dock-launcher {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 30px;
+    color: @text;
+    padding: 0 12px 0 10px;
+    margin: 6px 4px 6px 0;
+    border-radius: 12px;
+    border-right: 1px solid @border;
+    transition: background-color 0.15s ease;
+}
+.dock #custom-dock-launcher:hover { background: @hover; }
+
+.dock #taskbar button {
+    padding: 3px 5px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    background: transparent;
+    /* Punto bajo las apps abiertas, como en macOS */
+    border-bottom: 2px solid transparent;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.dock #taskbar button:hover  { background: @hover; }
+.dock #taskbar button.active {
+    background: @pressed;
+    border-bottom-color: rgba(255, 255, 255, 0.7);
+}
+.dock #taskbar button.minimized { opacity: 0.5; }
