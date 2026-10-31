@@ -23,7 +23,7 @@ PACKAGES=(
     git zsh fzf fastfetch
     hyprland xdg-desktop-portal-hyprland hyprsunset waybar quickshell rofi kitty dolphin dunst
     waypaper mpvpaper matugen socat jq ffmpeg imagemagick python-pillow python-numpy
-    grim slurp wl-clipboard
+    grim slurp wl-clipboard libnotify brightnessctl playerctl wireplumber
     inter-font ttf-jetbrains-mono-nerd papirus-icon-theme
     neovim go gcc clang rust
 )
@@ -91,6 +91,9 @@ else
     dots branch -q --set-upstream-to=origin/main main
 fi
 
+# Lo que nunca debe entrar en el repo (ficheros locales y generados)
+cp "$HOME/.github/exclude" "$GIT_DIR/info/exclude"
+
 # 3. Shell ---------------------------------------------------------------------
 if [[ $(getent passwd "$USER" | cut -d: -f7) != */zsh ]]; then
     say "Cambiando la shell por defecto a zsh"
@@ -103,6 +106,18 @@ fi
 wp=$HOME/.config/waypaper
 [[ -f $wp/config.ini ]] || cp "$wp/config.example.ini" "$wp/config.ini"
 mkdir -p "$HOME/Pictures/Wallpapers"
+
+# Colores del sistema: los ficheros que genera matugen no están en el repo (cambian con
+# cada fondo). La primera vez se generan a partir de un color base; luego, al elegir
+# fondo con waypaper, from-wallpaper.sh los regenera con los colores de la imagen.
+if [[ ! -f $HOME/.config/quickshell/Matugen.qml ]]; then
+    say "Generando los colores iniciales con matugen"
+    matugen color hex "#8caaee" -m dark >/dev/null 2>&1 || warn "matugen falló; elige un fondo con waypaper para generarlos"
+fi
+
+# qt6ct necesita rutas absolutas: su config sale de una plantilla con @HOME@
+qt=$HOME/.config/qt6ct
+[[ -f $qt/qt6ct.conf ]] || sed "/^#/d; s|@HOME@|$HOME|g" "$qt/qt6ct.example.conf" >"$qt/qt6ct.conf"
 
 # 4. Iconos: Papirus-Dark con carpetas del color del wallpaper (se regenera con waypaper)
 if [[ -d /usr/share/icons/Papirus ]]; then

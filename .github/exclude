@@ -1,0 +1,25 @@
+# Ficheros que 'dots add' nunca debe meter en el repo.
+# install.sh copia este fichero a ~/.dotfiles/info/exclude.
+
+__pycache__/
+*.bak
+*.bak-*
+
+# Propios de cada equipo
+.config/hypr/hyprland-gui.lua
+.config/waypaper/config.ini
+# Rutas absolutas: se genera desde qt6ct.example.conf
+.config/qt6ct/qt6ct.conf
+
+# Generados por matugen (cambian con cada fondo; install.sh los crea la primera vez)
+.config/dunst/dunstrc.d/50-matugen.conf
+.config/fastfetch/config.jsonc
+.config/hypr/conf/colors.lua
+.config/kitty/matugen.conf
+.config/quickshell/Matugen.qml
+.config/rofi/colors/matugen.rasi
+.config/waybar/colors.css
+.config/gtk-3.0/gtk.css
+.config/gtk-4.0/gtk.css
+.config/kdeglobals
+.local/share/color-schemes/Matugen.colors
