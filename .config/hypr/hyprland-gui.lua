@@ -3,7 +3,7 @@
 -- Settings
 hl.config({
     decoration = {
-        active_opacity = 0.95,
+        active_opacity = 0.98,
         blur = {
             size = 8,
         },
@@ -19,14 +19,14 @@ hl.monitor({
     output = "DP-1",
     disabled = false,
     mode = "1920x1080@144.00Hz",
-    position = "1360x0",
+    position = "1930x0",
     scale = 1,
     cm = "srgb",
 })
 hl.monitor({
     output = "HDMI-A-1",
     disabled = false,
-    mode = "1360x768@60.02Hz",
+    mode = "1920x1080@60.00Hz",
     position = "0x0",
     scale = 1,
     cm = "srgb",

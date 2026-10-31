@@ -90,3 +90,10 @@ hl.layer_rule({
     blur         = true,
     ignore_alpha = 0.1,
 })
+
+-- Las notificaciones entran deslizando desde el borde derecho (el resto de capas hace popin)
+hl.layer_rule({
+    name      = "dunst-slide",
+    match     = { namespace = "^notifications$" },
+    animation = "slide right",
+})

@@ -7,4 +7,10 @@ hl.config({
             inactive_border = "rgba({{colors.outline_variant.default.hex_stripped}}aa)",
         },
     },
+    decoration = {
+        shadow = {
+            color          = "rgba({{colors.surface_container_lowest.default.hex_stripped}}77)",
+            color_inactive = "rgba({{colors.surface_container_lowest.default.hex_stripped}}40)",
+        },
+    },
 })

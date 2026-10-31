@@ -10,7 +10,7 @@
 
     /* Paleta Material completa, para themes/aurora.rasi */
     m-surface:              {{colors.surface.default.hex}};
-    m-surface-glass:        {{colors.surface.default.hex}}D9;
+    m-surface-glass:        {{colors.surface.default.hex}}E6;
     m-surface-container:    {{colors.surface_container.default.hex}};
     m-surface-high:         {{colors.surface_container_high.default.hex}};
     m-surface-highest:      {{colors.surface_container_highest.default.hex}};

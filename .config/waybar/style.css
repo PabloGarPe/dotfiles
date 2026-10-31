@@ -1,8 +1,8 @@
 /* Estilo macOS Sequoia (basado en kamlendras/waybar-macos-sequoia), versión oscura translúcida.
    El fondo se desenfoca con la layer rule "waybar-blur" de ~/.config/hypr/conf/rules.lua */
 
-@define-color bar       rgba(28, 28, 30, 0.55);   /* #1C1C1E */
-@define-color dock      rgba(44, 44, 46, 0.45);   /* #2C2C2E */
+@define-color bar       rgba(28, 28, 30, 0.68);   /* #1C1C1E */
+@define-color dock      rgba(44, 44, 46, 0.6);   /* #2C2C2E */
 @define-color hover     rgba(255, 255, 255, 0.14);
 @define-color pressed   rgba(255, 255, 255, 0.22);
 @define-color border    rgba(255, 255, 255, 0.12);

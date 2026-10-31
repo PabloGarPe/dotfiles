@@ -10,10 +10,7 @@ hl.config({
 
         border_size = 2,
 
-        col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
-        },
+        -- Los colores de los bordes salen del wallpaper: conf/colors.lua (matugen)
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
         resize_on_border = false,
@@ -29,14 +26,18 @@ hl.config({
         rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows
-        active_opacity   = 0.95,
-        inactive_opacity = 0.85,
+        active_opacity   = 0.98,
+        inactive_opacity = 0.92,
 
+        -- Sombra amplia y suave; el color (tintado con el wallpaper) está en conf/colors.lua
         shadow = {
             enabled      = true,
-            range        = 4,
-            render_power = 3,
-            color        = 0xee1a1a1a,
+            range        = 24,
+            render_power = 2,
+            offset       = "0 6",
+            scale        = 1.0,
+            color        = 0x66000000,
+            color_inactive = 0x33000000,
         },
 
         blur = {

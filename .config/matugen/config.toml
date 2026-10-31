@@ -54,3 +54,9 @@ output_path = '~/.config/fastfetch/config.jsonc'
 input_path  = '~/.config/matugen/templates/dunst.conf'
 output_path = '~/.config/dunst/dunstrc.d/50-matugen.conf'
 post_hook   = 'dunstctl reload >/dev/null 2>&1'
+
+# kitty: colores en un include; SIGUSR1 recarga la config de las kitty abiertas
+[templates.kitty]
+input_path  = '~/.config/matugen/templates/kitty.conf'
+output_path = '~/.config/kitty/matugen.conf'
+post_hook   = 'pkill -USR1 -x kitty || true'

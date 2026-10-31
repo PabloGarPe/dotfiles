@@ -14,19 +14,19 @@
         "separator": "  ",
         "key": { "width": 16 },
         "color": {
-            "keys": "#ffb4ac",
-            "title": "#ffb4ac",
-            "output": "#f1dedc",
-            "separator": "#a08c8a"
+            "keys": "#89d0ed",
+            "title": "#89d0ed",
+            "output": "#dee3e6",
+            "separator": "#8a9296"
         },
         "size": { "binaryPrefix": "iec", "ndigits": 1 },
-        "bar": { "char": { "elapsed": "■", "total": "■" }, "width": 12, "color": { "total": "#534341", "border": "#a08c8a" } },
-        "percent": { "type": ["num", "bar"], "color": { "green": "#e0c38c", "yellow": "#e7bdb8", "red": "#ffb4ab" } }
+        "bar": { "char": { "elapsed": "■", "total": "■" }, "width": 12, "color": { "total": "#40484c", "border": "#8a9296" } },
+        "percent": { "type": ["num", "bar"], "color": { "green": "#c4c3eb", "yellow": "#b3cad5", "red": "#ffb4ab" } }
     },
     "modules": [
         "break",
         { "type": "title", "format": "{user-name-colored}{at-symbol-colored}{host-name-colored}" },
-        { "type": "custom", "format": "──────────────────────────────────", "outputColor": "#534341" },
+        { "type": "custom", "format": "──────────────────────────────────", "outputColor": "#40484c" },
         { "type": "os",       "key": "󰣇  Sistema",  "format": "{pretty-name} {arch}" },
         { "type": "kernel",   "key": "  Kernel" },
         { "type": "uptime",   "key": "󰅐  Encendido" },
@@ -34,7 +34,7 @@
         { "type": "wm",       "key": "  Escritorio" },
         { "type": "shell",    "key": "  Shell" },
         { "type": "terminal", "key": "  Terminal" },
-        { "type": "custom", "format": "──────────────────────────────────", "outputColor": "#534341" },
+        { "type": "custom", "format": "──────────────────────────────────", "outputColor": "#40484c" },
         { "type": "cpu",      "key": "  CPU",       "format": "{name}" },
         { "type": "gpu",      "key": "󰢮  GPU",       "format": "{name}", "hideType": "integrated" },
         { "type": "memory",   "key": "󰍛  Memoria" },
