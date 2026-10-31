@@ -20,7 +20,7 @@ Hyprland (config en Lua) en CachyOS, con estética macOS Sequoia en oscuro.
 ```sh
 sudo pacman -S hyprland waybar rofi kitty dolphin waypaper mpvpaper socat matugen \
   ffmpeg jq grim slurp wl-clipboard dunst hyprsunset xdg-desktop-portal-hyprland \
-  inter-font ttf-jetbrains-mono-nerd imagemagick python-pillow python-numpy neovim
+  inter-font ttf-jetbrains-mono-nerd papirus-icon-theme imagemagick python-pillow python-numpy neovim
 ```
 
 ## Instalación rápida

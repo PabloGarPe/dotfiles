@@ -9,7 +9,7 @@
 configuration {
     modi:                "drun,run,window,filebrowser";
     show-icons:          true;
-    icon-theme:          "Papirus";
+    icon-theme:          "Papirus-Matugen";
     display-drun:        "󰀻  Apps";
     display-run:         "  Run";
     display-window:      "  Ventanas";

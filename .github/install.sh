@@ -24,7 +24,7 @@ PACKAGES=(
     hyprland xdg-desktop-portal-hyprland hyprsunset waybar rofi kitty dolphin dunst
     waypaper mpvpaper matugen socat jq ffmpeg imagemagick python-pillow python-numpy
     grim slurp wl-clipboard
-    inter-font ttf-jetbrains-mono-nerd
+    inter-font ttf-jetbrains-mono-nerd papirus-icon-theme
     neovim go gcc clang rust
 )
 OPTIONAL=(cachyos-zsh-config brave-bin librewolf sbctl)   # se instalan si existen en tus repos
@@ -99,7 +99,14 @@ fi
 [[ -f /usr/share/cachyos-zsh-config/cachyos-config.zsh ]] \
     || warn ".zshrc usa cachyos-zsh-config (oh-my-zsh + p10k); fuera de CachyOS tendrás que adaptarlo"
 
-# 4. LibreWolf: copia el tema al perfil real si no se llama igual que el del repo
+# 4. Iconos: Papirus-Dark con carpetas del color del wallpaper (se regenera con waypaper)
+if [[ -d /usr/share/icons/Papirus ]]; then
+    say "Generando el tema de iconos Papirus-Matugen"
+    "$HOME/.config/matugen/papirus-matugen.py" || warn "No se pudo generar Papirus-Matugen"
+    gsettings set org.gnome.desktop.interface icon-theme Papirus-Matugen 2>/dev/null || true
+fi
+
+# 5. LibreWolf: copia el tema al perfil real si no se llama igual que el del repo
 lw=$HOME/.config/librewolf/librewolf
 src=$(compgen -G "$lw/*.default-release/chrome" | head -1 || true)
 if [[ -n $src && -f $lw/profiles.ini ]]; then
@@ -111,7 +118,7 @@ if [[ -n $src && -f $lw/profiles.ini ]]; then
     done
 fi
 
-# 5. Opcionales ----------------------------------------------------------------
+# 6. Opcionales ----------------------------------------------------------------
 if [[ -n $sddm_theme ]]; then
     say "Instalando tema SDDM: $sddm_theme"
     sudo pacman -S --needed sddm qt6-multimedia

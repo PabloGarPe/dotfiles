@@ -33,3 +33,8 @@ output_path = '~/.config/kdeglobals'
 [templates.kde-colors]
 input_path  = '~/.config/matugen/templates/kdeglobals'
 output_path = '~/.local/share/color-schemes/Matugen.colors'
+
+# Color principal en texto plano (lo usa papirus-matugen.py para las carpetas)
+[templates.primary]
+input_path  = '~/.config/matugen/templates/primary.txt'
+output_path = '~/.cache/matugen/primary'
