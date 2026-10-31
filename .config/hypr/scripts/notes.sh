@@ -21,6 +21,27 @@ add() {
 	notify-send -a "Notas" -t 2000 "Nota guardada" "$note"
 }
 
+# Color de acento (tags) desde la paleta de matugen, con valor por defecto
+ACCENT=$(grep -oP 'm-tertiary:\s*\K#[0-9a-fA-F]{6}' "$HOME/.config/rofi/colors/matugen.rasi" 2>/dev/null)
+ACCENT="${ACCENT:-#e0c38c}"
+
+# Markdown en línea → markup Pango para rofi (-markup-rows)
+render() {
+	ACCENT="$ACCENT" perl -CSD -Mutf8 -pe '
+		s/&/&amp;/g; s/</&lt;/g; s/>/&gt;/g;
+		s/^- //;
+		s{^\[([^\]]*)\]\s*}{<span alpha="55%" size="small">$1</span>  };
+		s{`([^`]+)`}{<tt><span background="#ffffff1a">$1</span></tt>}g;
+		s{\*\*(.+?)\*\*|__(.+?)__}{"<b>".($1//$2)."</b>"}ge;
+		s{(?<![\w*])\*(?!\s)(.+?)(?<!\s)\*(?!\w)|(?<!\w)_(?!\s)(.+?)(?<!\s)_(?!\w)}{"<i>".($1//$2)."</i>"}ge;
+		s{~~(.+?)~~}{<s>$1</s>}g;
+		s{\[([^\]]+)\]\(([^)]+)\)}{<u>$1</u>}g;
+		s{\[ \]}{☐}g; s{\[[xX]\]}{☑}g;
+		s{(</span>  )(#{1,6}) (.*)$}{$1 . "<b><span size=\"large\">$3</span></b>"}e;
+		s{(^|\s)(#[\w\-]+)}{$1<span foreground="$ENV{ACCENT}" weight="bold">$2</span>}g;
+	'
+}
+
 view() {
 	while :; do
 		local total sel code
@@ -30,7 +51,7 @@ view() {
 			exit 0
 		fi
 
-		sel=$(tac "$NOTES" | sed 's/^- //' | rofi -dmenu -i -p "Notas ($total)" -format i \
+		sel=$(tac "$NOTES" | render | rofi -dmenu -i -markup-rows -p "Notas ($total)" -format i \
 			-kb-custom-1 "Alt+d" -kb-custom-2 "Alt+e" \
 			-mesg "Enter: copiar · Alt+d: borrar · Alt+e: editar en nvim")
 		code=$?
