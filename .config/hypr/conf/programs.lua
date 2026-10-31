@@ -5,7 +5,7 @@ return {
 	terminal = "kitty",
 	fileManager = "dolphin",
 	menu = "rofi -show drun",
-	wallpaper = "waypaper",
+	wallpaper = "qs ipc call wallpapers toggle", -- Selector de Quickshell (waypaper sigue aplicando el fondo)
 	browser = "brave",
 	mainMod = "SUPER", -- Tecla "Windows" como modificador principal
 }

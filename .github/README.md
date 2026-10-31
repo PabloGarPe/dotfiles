@@ -9,7 +9,7 @@ Hyprland (config en Lua) en CachyOS, con estética macOS Sequoia en oscuro.
 | Fondos (waypaper + mpvpaper, imágenes y vídeo) | `.config/waypaper/` |
 | Colores del sistema a partir del fondo (matugen) | `.config/matugen/` |
 | Lanzador (tema Aurora) y menú de apagado (rofi) | `.config/rofi/` |
-| Centro de control estilo macOS, se abre desde el reloj (Quickshell) | `.config/quickshell/` |
+| Centro de control (reloj de waybar) y selector de fondos en cinta (Super+Shift+W), con Quickshell | `.config/quickshell/` |
 | Neovim (LazyVim) | `.config/nvim/` |
 | Tema "Nocturne" para Brave | `.local/share/brave-themes/nocturne/` |
 | Tema "Nocturne" para LibreWolf | `.config/librewolf/librewolf/*/chrome/`, `user.js` |

@@ -248,7 +248,7 @@ Scope {
                             Repeater {
                                 model: [
                                     { icon: "󰹑", label: "Captura", cmd: [Quickshell.env("HOME") + "/.config/hypr/scripts/screenshot.sh"] },
-                                    { icon: "󰸉", label: "Fondo", cmd: ["waypaper"] },
+                                    { icon: "󰸉", label: "Fondo", cmd: ["qs", "ipc", "call", "wallpapers", "open"] },
                                 ]
                                 delegate: Tile {
                                     id: quick
