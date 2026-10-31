@@ -40,9 +40,15 @@ Scope {
     }
     function toggle() { open ? hide() : show() }
 
+    property var fade: null   // WallpaperFade (shell.qml): cambia el fondo con un fundido
+
     function apply(path) {
-        applier.command = ["waypaper", "--wallpaper", path]
-        applier.startDetached()
+        if (fade) {
+            fade.change(path)
+        } else {
+            applier.command = ["waypaper", "--wallpaper", path]
+            applier.startDetached()
+        }
         current = path
         hide()
     }

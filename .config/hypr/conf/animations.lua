@@ -46,3 +46,7 @@ hl.animation({ leaf = "workspaces",       enabled = true, speed = 4,   bezier = 
 hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 4,   bezier = "emphasized",      style = "slidefadevert 15%" })
 
 hl.animation({ leaf = "zoomFactor",       enabled = true, speed = 6,   bezier = "quick" })
+
+-- Degradado del borde activo (colores de matugen) girando despacio: una vuelta cada ~10 s (el máximo que admite speed).
+-- Obliga a redibujar el borde continuamente; si notas consumo de GPU, pon enabled = false.
+hl.animation({ leaf = "borderangle",      enabled = true, speed = 100, bezier = "linear",          style = "loop" })

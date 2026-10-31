@@ -112,7 +112,7 @@ mkdir -p "$HOME/Pictures/Wallpapers"
 # Colores del sistema: los ficheros que genera matugen no están en el repo (cambian con
 # cada fondo). La primera vez se generan a partir de un color base; luego, al elegir
 # fondo con waypaper, from-wallpaper.sh los regenera con los colores de la imagen.
-if [[ ! -f $HOME/.config/quickshell/Matugen.qml ]]; then
+if [[ ! -f $HOME/.cache/matugen/quickshell.json ]]; then
     say "Generando los colores iniciales con matugen"
     matugen color hex "#8caaee" -m dark >/dev/null 2>&1 || warn "matugen falló; elige un fondo con waypaper para generarlos"
 fi

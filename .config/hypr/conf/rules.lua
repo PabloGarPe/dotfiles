@@ -97,3 +97,17 @@ hl.layer_rule({
     match     = { namespace = "^notifications$" },
     animation = "slide right",
 })
+
+-- Esquinas redondeadas de la pantalla (~/.config/quickshell/ScreenCorners.qml): sin animación
+hl.layer_rule({
+    name    = "screen-corners",
+    match   = { namespace = "^screen-corners$" },
+    no_anim = true,
+})
+
+-- Fundido al cambiar de fondo (~/.config/quickshell/WallpaperFade.qml): sin animación de capa
+hl.layer_rule({
+    name    = "wallpaper-fade",
+    match   = { namespace = "^wallpaper-fade$" },
+    no_anim = true,
+})

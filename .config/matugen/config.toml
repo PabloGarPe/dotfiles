@@ -39,10 +39,10 @@ output_path = '~/.local/share/color-schemes/Matugen.colors'
 input_path  = '~/.config/matugen/templates/primary.txt'
 output_path = '~/.cache/matugen/primary'
 
-# Centro de control de Quickshell (se recarga solo al cambiar el fichero)
+# Colores de Quickshell: Matugen.qml lee este JSON en vivo (fuera de su carpeta para no recargarlo)
 [templates.quickshell]
-input_path  = '~/.config/matugen/templates/quickshell.qml'
-output_path = '~/.config/quickshell/Matugen.qml'
+input_path  = '~/.config/matugen/templates/quickshell.json'
+output_path = '~/.cache/matugen/quickshell.json'
 
 # fastfetch al abrir una terminal (avatar + datos del sistema con el acento del wallpaper)
 [templates.fastfetch]
@@ -60,3 +60,8 @@ post_hook   = 'dunstctl reload >/dev/null 2>&1'
 input_path  = '~/.config/matugen/templates/kitty.conf'
 output_path = '~/.config/kitty/matugen.conf'
 post_hook   = 'pkill -USR1 -x kitty || true'
+
+# Prompt de zsh (Powerlevel10k): las terminales abiertas lo recargan solas (ver ~/.zshrc)
+[templates.p10k]
+input_path  = '~/.config/matugen/templates/p10k.zsh'
+output_path = '~/.config/zsh/p10k-matugen.zsh'

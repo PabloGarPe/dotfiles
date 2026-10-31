@@ -71,7 +71,7 @@ matugen color hex "#8caaee" -m dark   # colores iniciales, hasta que elijas un f
 [`.github/exclude`](exclude) lista lo que `dots add` nunca debe meter:
 
 - **Ficheros de cada equipo:** `.config/hypr/hyprland-gui.lua` (ajustes de HyprMod, como los monitores) y `.config/waypaper/config.ini` (fondo elegido). El segundo sale de `config.example.ini`.
-- **Colores generados por matugen** (`colors.lua`, `colors.css`, `matugen.rasi`, `Matugen.qml`, `kitty/matugen.conf`…): cambian con cada fondo. Las plantillas están en `.config/matugen/templates/`; el instalador los genera la primera vez y, a partir de ahí, se regeneran al elegir fondo con waypaper.
+- **Colores generados por matugen** (`colors.lua`, `colors.css`, `matugen.rasi`, `kitty/matugen.conf`, el prompt de zsh…): cambian con cada fondo. Las plantillas están en `.config/matugen/templates/`; el instalador los genera la primera vez y, a partir de ahí, se regeneran al elegir fondo con waypaper.
 - **`qt6ct.conf`:** necesita rutas absolutas, así que se genera desde `qt6ct.example.conf`.
 
 El tema de Brave se carga a mano: `brave://extensions` → modo desarrollador → *Cargar descomprimida* → `~/.local/share/brave-themes/nocturne`.

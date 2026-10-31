@@ -20,6 +20,10 @@ esac
 
 matugen image "$src" -m dark --prefer saturation
 
+# Imagen fija del fondo nuevo: la usa el fundido del próximo cambio (quickshell/WallpaperFade.qml)
+mkdir -p ~/.cache/wallpaper
+ffmpeg -loglevel error -y -i "$src" -frames:v 1 -vf "scale='min(2560,iw)':-2" -q:v 3 ~/.cache/wallpaper/current.jpg
+
 # Iconos: Papirus-Dark con carpetas del color del wallpaper
 ~/.config/matugen/papirus-matugen.py
 

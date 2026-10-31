@@ -31,4 +31,21 @@ bindkey '^[[B' history-substring-search-down
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Colores del prompt a partir del wallpaper (generado por matugen). Al cambiar de fondo,
+# las terminales ya abiertas lo recargan antes de pintar el siguiente prompt.
+_p10k_matugen=~/.config/zsh/p10k-matugen.zsh
+_p10k_matugen_mtime=0
+_p10k_matugen_load() {
+  [[ -r $_p10k_matugen ]] || return
+  zmodload -F zsh/stat b:zstat
+  local -a m; zstat -A m +mtime -- $_p10k_matugen 2>/dev/null || return
+  (( m[1] == _p10k_matugen_mtime )) && return
+  local first=$(( _p10k_matugen_mtime == 0 ))
+  _p10k_matugen_mtime=$m[1]
+  source $_p10k_matugen
+  (( first )) || p10k reload
+}
+_p10k_matugen_load
+autoload -Uz add-zsh-hook && add-zsh-hook precmd _p10k_matugen_load
 alias dots='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'

@@ -16,10 +16,10 @@ __pycache__/
 .config/fastfetch/config.jsonc
 .config/hypr/conf/colors.lua
 .config/kitty/matugen.conf
-.config/quickshell/Matugen.qml
 .config/rofi/colors/matugen.rasi
 .config/waybar/colors.css
 .config/gtk-3.0/gtk.css
 .config/gtk-4.0/gtk.css
 .config/kdeglobals
 .local/share/color-schemes/Matugen.colors
+.config/zsh/p10k-matugen.zsh
