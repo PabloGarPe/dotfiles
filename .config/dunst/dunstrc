@@ -1,0 +1,81 @@
+# Notificaciones estilo macOS: tarjetas translúcidas arriba a la derecha.
+# El desenfoque lo pone la layer rule "dunst-blur" de ~/.config/hypr/conf/rules.lua.
+# Los colores salen del wallpaper: dunstrc.d/50-matugen.conf (plantilla en ~/.config/matugen/templates/).
+
+[global]
+    monitor = 0
+    follow = mouse
+    layer = overlay
+
+    # Geometría
+    width = (300, 380)
+    height = (0, 220)
+    origin = top-right
+    offset = (12, 38)
+    notification_limit = 5
+    gap_size = 8
+    corner_radius = 14
+    progress_bar_corner_radius = 4
+    icon_corner_radius = 8
+
+    # Barra de progreso (volumen, brillo, descargas…)
+    progress_bar = true
+    progress_bar_height = 6
+    progress_bar_frame_width = 0
+    progress_bar_min_width = 150
+    progress_bar_max_width = 380
+
+    # Caja
+    padding = 14
+    horizontal_padding = 14
+    text_icon_padding = 12
+    frame_width = 1
+    separator_height = 0
+    separator_color = frame
+    transparency = 0
+    sort = urgency_descending
+    idle_threshold = 120
+
+    # Texto
+    font = Inter 10
+    line_height = 2
+    markup = full
+    format = "<b>%s</b>\n<span alpha='75%'>%b</span>"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = end
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = no
+
+    # Iconos
+    enable_recursive_icon_lookup = true
+    icon_theme = "Papirus-Dark, Papirus, Adwaita"
+    icon_position = left
+    # Papirus solo tiene los iconos de estado (volumen, batería…) hasta 32 px
+    min_icon_size = 32
+    max_icon_size = 48
+
+    # Historial e interacción
+    sticky_history = yes
+    history_length = 30
+    dmenu = rofi -dmenu -p Acción
+    browser = xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
+
+[urgency_low]
+    timeout = 4
+
+[urgency_normal]
+    timeout = 6
+
+[urgency_critical]
+    timeout = 0
+

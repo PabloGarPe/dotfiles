@@ -48,3 +48,9 @@ output_path = '~/.config/quickshell/Matugen.qml'
 [templates.fastfetch]
 input_path  = '~/.config/matugen/templates/fastfetch.jsonc'
 output_path = '~/.config/fastfetch/config.jsonc'
+
+# Notificaciones (dunst): colores en un drop-in, el resto del estilo en ~/.config/dunst/dunstrc
+[templates.dunst]
+input_path  = '~/.config/matugen/templates/dunst.conf'
+output_path = '~/.config/dunst/dunstrc.d/50-matugen.conf'
+post_hook   = 'dunstctl reload >/dev/null 2>&1'

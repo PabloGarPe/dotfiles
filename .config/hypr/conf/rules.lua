@@ -82,3 +82,11 @@ hl.window_rule({
     size   = "900 600",
     center = true,
 })
+
+-- Desenfoque tras las notificaciones de dunst (~/.config/dunst/dunstrc)
+hl.layer_rule({
+    name         = "dunst-blur",
+    match        = { namespace = "^notifications$" },
+    blur         = true,
+    ignore_alpha = 0.1,
+})
