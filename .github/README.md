@@ -23,7 +23,25 @@ sudo pacman -S hyprland waybar rofi kitty dolphin waypaper mpvpaper socat matuge
   inter-font ttf-jetbrains-mono-nerd imagemagick python-pillow python-numpy neovim
 ```
 
-## Instalación (repo bare)
+## Instalación rápida
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/PabloGarPe/dotfiles/main/.github/install.sh | bash
+```
+
+[`.github/install.sh`](install.sh) instala los paquetes de arriba (y Brave, LibreWolf y `cachyos-zsh-config` si están en tus repos) y clona el repo bare en `~/.dotfiles`. Antes del checkout, mueve a `~/.dotfiles-backup/<fecha>/` los ficheros que ya tengas y vayan a sobrescribirse. También pone zsh como shell y copia el tema de LibreWolf a tu perfil. Si lo vuelves a ejecutar, solo hace `pull`. Opciones (tras `bash -s --`):
+
+| Opción | Qué hace |
+|---|---|
+| `--no-deps` | no instala paquetes |
+| `--sddm [tema]` | instala los temas de SDDM y activa `crimson-moon` (o `six-eyes`) |
+| `--nvim` | descarga los plugins de Neovim y los LSPs de Go, C/C++ y Rust |
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/PabloGarPe/dotfiles/main/.github/install.sh | bash -s -- --sddm --nvim
+```
+
+## Instalación manual (repo bare)
 
 ```sh
 git clone --bare git@github.com:PabloGarPe/dotfiles.git ~/.dotfiles
