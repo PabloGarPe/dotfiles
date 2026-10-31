@@ -21,7 +21,7 @@ BACKUP=$HOME/.dotfiles-backup/$(date +%F_%H%M%S)
 
 PACKAGES=(
     git zsh fzf
-    hyprland xdg-desktop-portal-hyprland hyprsunset waybar rofi kitty dolphin dunst
+    hyprland xdg-desktop-portal-hyprland hyprsunset waybar quickshell rofi kitty dolphin dunst
     waypaper mpvpaper matugen socat jq ffmpeg imagemagick python-pillow python-numpy
     grim slurp wl-clipboard
     inter-font ttf-jetbrains-mono-nerd papirus-icon-theme

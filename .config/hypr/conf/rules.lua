@@ -63,3 +63,13 @@ hl.layer_rule({
     blur         = true,
     ignore_alpha = 0.1,
 })
+
+-- Centro de control de Quickshell (~/.config/quickshell): blur y sin la animación
+-- de capas de Hyprland (el panel ya anima su entrada)
+hl.layer_rule({
+    name         = "quickshell-blur",
+    match        = { namespace = "^quickshell-.*$" },
+    blur         = true,
+    ignore_alpha = 0.3,
+    no_anim      = true,
+})
